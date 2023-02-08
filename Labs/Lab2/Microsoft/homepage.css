@@ -1,0 +1,113 @@
+body{
+    margin: 0;
+}
+header{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    margin-top: 5px;
+}
+#lef_menu_div{
+}
+
+li:hover{
+    text-decoration: 2px underline;
+}
+#img_li{
+     position: relative;
+     top: -45px;
+}
+.menu_li{
+    position: relative;
+    left: 90px;
+    display: inline;
+    margin-left: 20px;
+    top: -87px;
+    font-size: 15px;
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+#right_menu_div{
+    position: absolute;
+    left:1300px;
+    top: -20px;
+    }
+.right_menu_li{
+    display: inline;
+    margin-left: 40px;
+    font-size: 15px;
+}
+.right_menu_div_a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+#right_menu_div_a:hover{
+    text-decoration: 2px underline;
+}
+.right_menu_div_a:focus{
+    border: 1px dashed;
+    padding: 10px;
+}
+#right_menu_div_a_img{
+    width: 8px;
+    height: 10px;
+    margin-left: 5px;
+}
+#sign_in{
+    position: relative;
+    top: 10px;
+}
+
+
+#main_div{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+}
+#main_div_div{
+    position: absolute;
+    left: 150px;
+    top: 200px;
+}
+#main_div_div_p{
+    font-size: 23px;
+    width: 500px;
+}
+.main_div_div_li{
+    position: relative;
+    top: 10px;
+    left: -60px;
+}
+.main_div_div_li_a:focus{
+    border: 1px dashed;
+    padding: 10px;
+}
+
+
+
+#pictures_div{
+    margin-right: 0;
+    position: absolute;
+    left: 100px;
+    top: 700px;
+}
+.pictures_div_li{
+    display: inline-block;
+    padding: 5px;
+    width: 380px;
+}
+#pictures_div_second{
+    position: relative;
+    top: -18px;
+}
+#pictures_div_third{
+    position: relative;
+    top: -36px;
+}
+#pictures_div_fourth{
+    position: relative;
+    top: -36px;
+}

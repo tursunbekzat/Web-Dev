@@ -7,9 +7,6 @@ section{
     top: 100px;
 
 }
-#img{
-
-}
 #smg{
     margin-left: 277px;
     float: left;
@@ -67,22 +64,35 @@ input.r{
     position: relative;
     top:10px;
 }
+
 input:hover{
     border-color: blue;
 }
-
+input:focus{
+    outline: none;
+}
 
 #list{
-    margin-left: 277px;
-    font-size: 18px;
-}
-#lan{
-    display: inline-flex;
+    margin-left: 500px;
+    margin-top: 15px;
+    font-size: 12px;
+    display: inline-block;
+    text-decoration: none;
+    width: 800px;
 }
 #hr{
-    width:70%;
-    margin-left: 0.1px;
+    margin-top: 40px;
+    width:100%;
 }
-#links{
-    width: 1300px;
+.lan_a{
+    padding-left: 10px;
+    text-decoration: none;
+}
+.links{
+    text-decoration: none;   
+    padding-left: 3px;
+    color: gray;
+}
+.links:hover{
+    text-decoration: underline;
 }
