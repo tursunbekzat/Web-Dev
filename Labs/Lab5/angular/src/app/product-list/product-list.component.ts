@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products';
+import {Product, products } from '../products';
 
 @Component({
   selector: 'app-product-list',
@@ -8,17 +8,36 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  products = [...products];
-
-  share(url : string) {
-    var otvet = window.prompt()
-    var link = "https://t.me/share/url?url="+url+"&text=" + otvet;
-    window.open(link);
+  selectedFilter: String = "None";
+  itemList: Product[] = products;
+  filteredItems = [...products];
+  onDeleteItem(id:Number){
+    this.itemList = this.itemList.filter((x) => x.id !== id);
+    this.filterItems();
   }
 
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+  ngOnInit():void{
   }
+
+  changeFilter(filter: string) {
+    this.selectedFilter = filter;
+    this.filterItems();
+  }
+
+  filterItems() {
+    if(this.selectedFilter === "None") {
+      this.filteredItems = this.itemList
+    } else {
+      this.filteredItems = this.itemList.filter(p => p.category == this.selectedFilter);
+    }
+  }
+
+
+
+
+
+
+
 }
 
 /*

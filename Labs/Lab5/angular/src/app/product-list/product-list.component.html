@@ -1,39 +1,13 @@
-
-<div *ngFor="let product of products" class = "products">
-
-    <h3>
-        <a [title] = "product.name + ' details'"
-        [routerLink]="['/products', product.id]">>
-          {{ product.name }}
-        </a>
-      
-    </h3>
-
-    <div class="picture">
-      <img [src] = product.image>
-    </div>
-
-    <p *ngIf="product.description">
-      Description: {{ product.description }}
-    </p>
-
-    <p *ngIf="product.rating">
-      rating: {{ product.rating }}
-    </p>
-
-    <button type="button" (click)="share(product.link)">
-      Share
-    </button>
-
-    <app-product-alerts
-  [product]="product" 
-  (notify)="onNotify()">
-</app-product-alerts>
-
+<h2>Products</h2>
+<select (change) = "changeFilter($any($event).target.value)">
+  <option value = "None"> All </option>
+  <option value = "Smartphone"> Phone</option>
+  <option value = "Headphones"> Headphones</option>
+  <option value="Smart-Watch"> Smart-Watch</option>
+  <option value="Laptop"> Laptop</option>
+</select>
+<div class="list-block">
+  <div *ngFor="let item of filteredItems">
+    <app-product-item [item]="item" (remove)="onDeleteItem($event)"></app-product-item>
+  </div>
 </div>
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->
