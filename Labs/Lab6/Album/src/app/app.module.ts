@@ -12,9 +12,9 @@ import { PhotosComponent } from './components/photos/photos.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: '/home', component: HomeComponent},
-  {path: '/about', component: AboutComponent},
-  {path: '/albums', component: AlbumsComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'albums', component: AlbumsComponent}
 ]
 
 @NgModule({
