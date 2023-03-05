@@ -11,28 +11,27 @@
   </div>
 
   <h4>Properties:</h4>
-  <form (submit)="addOpt(option.value)">
+  <button type="button" class="btn btn-danger" (click)="change()">Change</button><br><br>
+  <form *ngIf=isEdit>
     <div class="form-group">
-      <input type="text" placeholder="Name" class="form-control"[(ngModel)]="name" name="name"><br>
-      <input type="number" placeholder="Speed" class="form-control"><br>
-      <input type="text" placeholder="Model" class="form-control"><br>
-      <input type="text" placeholder="Color" class="form-control"><br>
-      <input type="text" placeholder="Salon-color" class="form-control"><br>
-      <input type="text" placeholder="Model" class="form-control"><br>
+      <input type="text" placeholder="Name" class="form-control" [(ngModel)]="name" name="name"><br>
+      <input type="number" placeholder="Speed" class="form-control" [(ngModel)]="speed" name="speed"><br>
+      <input type="text" placeholder="Model" class="form-control" [(ngModel)]="model" name="model"><br>
+      <input type="text" placeholder="Color" class="form-control" [(ngModel)]="colors.car" name="car"><br>
+      <input type="text" placeholder="Salon-color" class="form-control" [(ngModel)]="colors.salon" name="salon"><br>
     </div>
   </form>
 
   <h4>Availabilities:</h4>
   <form (submit)="addOpt(option.value)">
     <div class="form-group">
-      <label for="option">Adding</label>
-      <br>
-      <input type="text" id="option" placeholder="Anything" class="form-control" #option>
-      <br>
+      <label for="option">Adding</label><br><br>
+      <input type="text" id="option" placeholder="Anything" class="form-control" #option><br>
       <button type="submit" class="btn btn-outline-success">Add</button>
     </div>
   </form>
   <br>
+
   <div class="alert alert-warning">
     <ul>
       <li *ngFor="let opt of options">
@@ -46,4 +45,5 @@
   <button class="btn btn-danger" (click)="carSelect('bmw')">BMV</button>
   <button class="btn btn-success" (click)="carSelect('mers')">Mercedes</button>
   <button class="btn btn-info" (click)="carSelect('audi')">Audi</button>
+
 </div>
