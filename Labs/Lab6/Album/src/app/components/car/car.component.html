@@ -1,6 +1,6 @@
 <div class="container">
-  <h4><mark>Automobile:</mark> {{ name }}
-  <small>{{ model }}</small></h4>
+  <h4><mark>Automobile:</mark> {{ name }}<small>{{ model }}</small></h4>
+
   <div class="alert alert-success">
     Characteristics:
     <ul>
@@ -42,8 +42,9 @@
   </div>
 
   <h4>Choose automobile:</h4>
-  <button class="btn btn-danger" (click)="carSelect('bmw')">BMV</button>
-  <button class="btn btn-success" (click)="carSelect('mers')">Mercedes</button>
-  <button class="btn btn-info" (click)="carSelect('audi')">Audi</button>
-
+  <div>
+    <button class="btn btn-info" (click)="carSelect('audi')">Audi</button>
+    <button class="btn btn-danger" (click)="carSelect('bmw')">BMV</button>
+    <button class="btn btn-success" (click)="carSelect('mers')">Mercedes</button>
+  </div>
 </div>
