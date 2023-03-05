@@ -1,0 +1,49 @@
+<div class="container">
+  <h4><mark>Automobile:</mark> {{ name }}
+  <small>{{ model }}</small></h4>
+  <div class="alert alert-success">
+    Characteristics:
+    <ul>
+      <li>Speed: <strong>{{ speed }}</strong></li>
+      <li>Color: <strong>{{ colors.car }}</strong></li>
+      <li>Salon color: <strong>{{ colors.salon }}</strong></li>
+    </ul>
+  </div>
+
+  <h4>Properties:</h4>
+  <form (submit)="addOpt(option.value)">
+    <div class="form-group">
+      <input type="text" placeholder="Name" class="form-control"[(ngModel)]="name" name="name"><br>
+      <input type="number" placeholder="Speed" class="form-control"><br>
+      <input type="text" placeholder="Model" class="form-control"><br>
+      <input type="text" placeholder="Color" class="form-control"><br>
+      <input type="text" placeholder="Salon-color" class="form-control"><br>
+      <input type="text" placeholder="Model" class="form-control"><br>
+    </div>
+  </form>
+
+  <h4>Availabilities:</h4>
+  <form (submit)="addOpt(option.value)">
+    <div class="form-group">
+      <label for="option">Adding</label>
+      <br>
+      <input type="text" id="option" placeholder="Anything" class="form-control" #option>
+      <br>
+      <button type="submit" class="btn btn-outline-success">Add</button>
+    </div>
+  </form>
+  <br>
+  <div class="alert alert-warning">
+    <ul>
+      <li *ngFor="let opt of options">
+        {{ opt }} <button class="btn btn-warning btn-sm"
+        (click)="delOpt(opt)">x</button>
+      </li>
+    </ul>
+  </div>
+
+  <h4>Choose automobile:</h4>
+  <button class="btn btn-danger" (click)="carSelect('bmw')">BMV</button>
+  <button class="btn btn-success" (click)="carSelect('mers')">Mercedes</button>
+  <button class="btn btn-info" (click)="carSelect('audi')">Audi</button>
+</div>

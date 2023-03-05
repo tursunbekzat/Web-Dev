@@ -1,0 +1,12 @@
+button{
+  margin-right: 10px;
+}
+.btn-sm{
+  font-size: 0.7em;
+  padding: 5px;
+  line-height: 8px;
+}
+.form-control{
+  text-align: center;
+  width: 200px;
+}
