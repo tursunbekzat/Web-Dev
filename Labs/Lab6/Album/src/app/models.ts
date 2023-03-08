@@ -1,11 +1,11 @@
-export interface Album {
+export interface IAlbum {
   id: number,
   title: string,
   userId: number
 }
 
 
-export interface AlbumPhotos {
+export interface IAlbumPhotos {
   albumId: Number,
   id: number,
   title: string,
@@ -14,7 +14,7 @@ export interface AlbumPhotos {
 }
 
 
-export let ALBUMS: Album[] = [
+export let ALBUMS: IAlbum[] = [
   {
     "userId": 1,
     "id": 1,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Album, AlbumPhotos} from "./models";
+import {IAlbum, IAlbumPhotos} from "./models";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -11,31 +11,31 @@ export class AlbumService {
 
   constructor(private client: HttpClient) { }
 
-  getAlbums(): Observable<Album[]> {
-    return this.client.get<Album[]>(`${this.BASE_URL}`)
+  getAlbums(): Observable<IAlbum[]> {
+    return this.client.get<IAlbum[]>(`${this.BASE_URL}`)
   }
 
 
-  getAlbum(id: Number): Observable<Album> {
-    return this.client.get<Album>(`${this.BASE_URL}${id}`)
+  getAlbum(id: Number): Observable<IAlbum> {
+    return this.client.get<IAlbum>(`${this.BASE_URL}${id}`)
   }
 
-  getAlbumPhoto(id: Number): Observable<AlbumPhotos[]> {
-    return this.client.get<AlbumPhotos[]>(`${this.BASE_URL}${id}/photos`)
-  }
-
-
-  addAlbum(album: Album): Observable<Album> {
-    return this.client.post<Album>(`${this.BASE_URL}`, album);
+  getAlbumPhoto(id: Number): Observable<IAlbumPhotos[]> {
+    return this.client.get<IAlbumPhotos[]>(`${this.BASE_URL}${id}/photos`)
   }
 
 
-  deleteAlbum(id: number): Observable<Album> {
-    return this.client.delete<Album>(`${this.BASE_URL}${id}`);
+  addAlbum(album: IAlbum): Observable<IAlbum> {
+    return this.client.post<IAlbum>(`${this.BASE_URL}`, album);
   }
 
-  editAlbum(album: Album): Observable<Album> {
-    return this.client.put<Album>(`${this.BASE_URL}${album.id}`, album);
+
+  deleteAlbum(id: number): Observable<IAlbum> {
+    return this.client.delete<IAlbum>(`${this.BASE_URL}${id}`);
+  }
+
+  editAlbum(album: IAlbum): Observable<IAlbum> {
+    return this.client.put<IAlbum>(`${this.BASE_URL}${album.id}`, album);
   }
 
 }

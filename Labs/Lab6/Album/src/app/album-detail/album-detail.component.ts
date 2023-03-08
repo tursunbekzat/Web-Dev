@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ALBUMS, Album} from "../models";
+import {ALBUMS, IAlbum} from "../models";
 import {AlbumService} from "../album.service";
 
 @Component({
@@ -9,13 +9,13 @@ import {AlbumService} from "../album.service";
   styleUrls: ['./album-detail.component.css']
 })
 export class AlbumDetailComponent implements OnInit{
-  album: Album;
-  edAlbum: Album;
+  album: IAlbum;
+  edAlbum: IAlbum;
   loaded: boolean;
 
   constructor(private route: ActivatedRoute, private albumService: AlbumService) {
-    this.album = {} as Album;
-    this.edAlbum = {} as Album
+    this.album = {} as IAlbum;
+    this.edAlbum = {} as IAlbum
     this.loaded = true;
   }
 

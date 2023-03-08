@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { ALBUMS, Album } from "../models";
+import { ALBUMS, IAlbum } from "../models";
 import {AlbumService} from "../album.service";
 
 @Component({
@@ -8,11 +8,11 @@ import {AlbumService} from "../album.service";
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit{
-  data: Album[];
-  newAlbum: Album;
+  data: IAlbum[];
+  newAlbum: IAlbum;
   loaded: boolean;
   constructor(private albumService: AlbumService){
-    this.newAlbum = {} as Album;
+    this.newAlbum = {} as IAlbum;
     this.loaded = true;
     this.data = [];
   }
@@ -35,7 +35,7 @@ export class AlbumsComponent implements OnInit{
     this.loaded = false;
     this.albumService.addAlbum(this.newAlbum).subscribe((album) => {
       this.data.unshift(album);
-      this.newAlbum = {} as Album;
+      this.newAlbum = {} as IAlbum;
       // console.log(album);
       this.loaded = true;
     })

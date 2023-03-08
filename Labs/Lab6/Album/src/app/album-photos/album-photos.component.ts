@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Album, AlbumPhotos} from "../models";
+import {IAlbum, IAlbumPhotos} from "../models";
 import {ActivatedRoute} from "@angular/router";
 import {AlbumService} from "../album.service";
 
@@ -11,7 +11,7 @@ import {AlbumService} from "../album.service";
 export class AlbumPhotosComponent implements OnInit{
   loaded: boolean;
   albumId : number | undefined
-  data: AlbumPhotos[]
+  data: IAlbumPhotos[]
   constructor(private route: ActivatedRoute, private albumService: AlbumService) {
     this.loaded = true;
     this.data = [];
