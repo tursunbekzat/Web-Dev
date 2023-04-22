@@ -1,0 +1,228 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Header styles */
+header {
+    position: sticky;   
+    background-color:aqua;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+nav a:hover {
+    color: #1e87f0;
+}
+
+/* Hero styles */
+.hero {
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThufl7WuFgySDYpCWaH_2i_6NWHQlZNWNZrQ&usqp=CAU"); */
+    background-color:aquamarine;
+    padding: 3rem;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    /* font-size: 1.5rem; */
+    font-size: 20px;
+    margin-bottom: 2rem;
+    color: whi;
+}
+
+.intro{
+    font-weight: bolder;
+    color:black;
+    font-family: 'Courier New', Courier, monospace;
+    width: 1000px;
+    margin-left: 400px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #1e87f0;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #0f6de8;
+}
+
+/* Featured recipes styles */
+.featured-recipes {
+    text-align: center;
+    padding: 3rem;
+}
+
+.featured-recipes h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.recipe-card {
+    /* background-color: #fff; */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.recipe-card img {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.recipe-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.recipe-card p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-card .button {
+    margin-top: 1rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+footer a {
+    color: #1e87f0;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+
+    .hero {
+        padding: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .recipe-card {
+        padding: 1rem;
+    }
+
+    .recipe-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .recipe-card p {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+}

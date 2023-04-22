@@ -1,0 +1,33 @@
+<header>
+    <h1>List of recipes</h1>
+</header>
+<div class="listrecipes">
+    <ul class="countryandcategory">
+        <li>
+            <label for="">Country</label>
+            <select (change)="changeFilterCountry($any($event).target.value)" (click)="filterItems()" class="countries">
+                <option *ngFor="let country of countries" value="{{ country }}">{{ country }}</option>
+            </select>
+
+        </li>
+        <li>
+            <label for="">Category</label>
+            <select (change)="changeFilterCategory($any($event).target.value)" (click)="filterItems()" class="category">
+                <option *ngFor="let category of categories" value="{{ category }}">{{ category }}</option>
+            </select>
+        </li>
+    </ul>
+
+    <div *ngIf="notEmpty()" class="container">
+        <div *ngFor="let recipe of filteredItems">
+            <img class="container" [src]=recipe.image>
+            <h3>{{ recipe.name }} </h3>
+            <h3>{{ recipe.description }} </h3>
+            <button class="buttonbasket" (click)="ischose(recipe)"><img
+                    style="width: 20px; height: 20px"
+                    [src]=ischosenimg(recipe)></button>
+            <button class="islove" (click)="islove(recipe)"><img style="width: 20px; height: 20px"
+                    [src]="isloveimg(recipe)"></button>
+        </div>
+    </div>
+</div>
