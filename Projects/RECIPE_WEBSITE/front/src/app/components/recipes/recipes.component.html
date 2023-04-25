@@ -2,7 +2,7 @@
     <h1>List of recipes</h1>
 </header>
 <div class="listrecipes">
-    <!-- <ul class="countryandcategory">
+    <ul class="countryandcategory">
         <li>
             <label for="">Country</label>
             <select (change)="changeFilterCountry($any($event).target.value)" (click)="filterItems()" class="countries">
@@ -16,30 +16,28 @@
                 <option *ngFor="let category of categories" value="{{ category }}">{{ category }}</option>
             </select>
         </li>
-    </ul> -->
+    </ul>
 
-    <!-- <div *ngIf="notEmpty()" class="container"> -->
-        <!-- <div *ngFor="let item of recipes| keyvalue"> -->
-            <!-- Key: {{ item.key }}, Value: {{ item.value }} -->
-            <!-- <img class="container" [src]=recipe.image> -->
-            <!-- <h3>{{ data }} </h3> -->
-            <!-- <h3>{{ recipe.description }} </h3> -->
-            <!-- <button class="buttonbasket" (click)="ischose(recipe)"><img
-                    style="width: 20px; height: 20px"
+    <div *ngIf="notEmpty()" class="container">
+        <div *ngFor="let recipe of filteredItems">
+            <img [src]="recipe.image" alt="Recipe Image">
+            <h3>{{ recipe.name }}</h3>
+            <p>{{ recipe.description }}</p>
+            <label>Ingredients:</label>
+            <label *ngFor="let ingredient of recipe.ingredients|keyvalue">
+                {{ ingredient.key }}, {{ ingredient.value }}
+            </label>
+            <p>Steps: {{ recipe.steps }}</p>
+            <p>Nationality: {{ recipe.national }}</p>
+            <p>Category: {{ recipe.category }}</p>
+            <p>Is Chosen: {{ recipe.ischoosen }}</p>
+            <p>Is Liked: {{ recipe.islike }}</p>
+            <!-- <button class="buttonbasket" (click)="ischose(recipe)"><img style="width: 20px; height: 20px"
                     [src]=ischosenimg(recipe)></button>
             <button class="islove" (click)="islove(recipe)"><img style="width: 20px; height: 20px"
                     [src]="isloveimg(recipe)"></button> -->
-        <!-- </div> -->
-    <!-- </div> -->
-    <div *ngFor="let recipe of recipes">
-        <h3>{{ recipe.name }}</h3>
-        <p>{{ recipe.description }}</p>
-        <p>Ingredients: {{ recipe.ingredients }}</p>
-        <p>Steps: {{ recipe.steps }}</p>
-        <p>Nationality: {{ recipe.national }}</p>
-        <p>Category: {{ recipe.category }}</p>
-        <img [src]="recipe.image" alt="Recipe Image">
-        <p>Is Chosen: {{ recipe.ischoosen }}</p>
-        <p>Is Liked: {{ recipe.islike }}</p>
-      </div>
+            <button (click)="likeRecipe(recipe.id, recipe.islike)"><img style="width: 20px; height: 20px"
+                    [src]="isloveimg(recipe)"></button>
+        </div>
+    </div>
 </div>

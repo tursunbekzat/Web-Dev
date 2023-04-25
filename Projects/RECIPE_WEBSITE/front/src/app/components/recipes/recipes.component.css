@@ -18,7 +18,7 @@ header {
 }
 
 /* Style for the select and label elements */
-/* .countryandcategory {
+.countryandcategory {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -32,7 +32,7 @@ header {
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
-} */
+}
 
 /* Style for the recipe items  */
 .container {

@@ -14,4 +14,9 @@ export class RecipeService {
   getRecipes(): Observable<Recipe[]> {
     return this.client.get<Recipe[]>(`${this.BASE_URL}`)
   }
+
+  // toggleLike(recipeId: number): Observable<any> {
+  //   const url = `${this.BASE_URL}recipes/${recipeId}/like/`;
+  //   return this.client.put(url, {});
+  // }
 }
