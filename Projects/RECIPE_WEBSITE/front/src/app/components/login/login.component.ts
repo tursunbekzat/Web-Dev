@@ -1,29 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from "@angular/forms";
+import { AuthService } from "../../services/auth.service";
+import { first } from "rxjs";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  username!: string;
-  password!: string;
-  errorMessage!: string;
+export class LoginComponent implements OnInit {
+
+  myForm!: FormGroup;
+
+  constructor(private authService: AuthService) {
+  }
+
+  ngOnInit(): void {
+    this.myForm = new FormGroup({
+      username: new FormControl(''),
+      password: new FormControl(''),
+    });
+  }
+
+  get f() {
+    return this.myForm.controls;
+  }
 
   onSubmit() {
-    // Here you can add code to send login credentials to a server
-    // For example:
-    // this.authService.login(this.username, this.password)
-    //   .subscribe(
-    //     data => console.log(data),
-    //     error => this.errorMessage = error
-    //   );
-    
-    // For this example, we'll just simulate a successful login
-    if (this.username === 'user' && this.password === 'password') {
-      alert('Login successful!');
-    } else {
-      this.errorMessage = 'Invalid username or password';
-    }
+    this.authService.login(this.f['username'].value, this.f['password'].value).pipe(first()).subscribe(
+      (data: any) => {
+        console.log(data);
+      }
+    )
   }
 }
